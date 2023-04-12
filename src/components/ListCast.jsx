@@ -1,17 +1,6 @@
-import { useState, useEffect } from "react";
-
-export default ({onChoice}) => {
+export default ({cast, onChoice}) => {
   const [cast, setCast] = useState([]);
-
-  async function fetchCast() {
-    const response = await fetch('cast.json');
-    setCast(await response.json());
-  }
-
-  useEffect(() => {
-    fetchCast();
-  });
-
+  
   return (
     <div style={{
       display: "grid",
